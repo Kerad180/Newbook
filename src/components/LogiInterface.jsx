@@ -1,15 +1,10 @@
 import { useState } from 'react'
+import { users } from './users';
 import './LoginInterface.css'
 
 export const LoginInterface = (props) => {
     const { onLogin } = props;
     const [formData, setFormDate] = useState({login: "", password: ""});
-    
-    const users = [
-        {login: 'Mufasa', password: 'password'},
-        {login: 'Simba', password: 'password'},
-        {login: 'Kiara', password: 'password'}
-    ]
  
     const onChangeLogin = (e) => {
         setFormDate({...formData, login: e.target.value})

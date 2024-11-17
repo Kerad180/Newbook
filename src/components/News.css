@@ -1,0 +1,11 @@
+#news {
+    -webkit-box-flex: 4;
+        -ms-flex: 4;
+            flex: 4;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 655px;
+    display: block;
+}

@@ -1,0 +1,73 @@
+#container {
+    background-color: #F7FBFC;
+    margin: auto;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+#top {
+    background-color: #7AB9D1;
+    border-radius: 0px 0px 15px 15px;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 1);
+            box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 1);
+    padding: 20px;
+    position: sticky;
+    top: 0px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 13fr 1fr;
+    grid-template-columns: 13fr 1fr;
+    z-index: 1000;
+}
+
+#top div h2 {
+    color: #020709;
+    font-size: 40px;
+}
+
+#returnButton {
+    background-color: #020709;
+    color: #F7FBFC;
+    padding: 20px; 
+    font-size: 15px;
+    border-radius: 20px;
+    opacity: 0.9;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+            box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+    width: 100px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+#main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.sendButton:hover, #shareButton:hover, #returnButton:hover, #contactButton:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.sendButton:active, #shareButton:active, #returnButton:active {
+    position: relative;
+    top: 0.7px;
+    -webkit-box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+            box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+}
+
+#contactButton:active {
+    bottom: 34.3px;
+    -webkit-box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+    box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+}
+

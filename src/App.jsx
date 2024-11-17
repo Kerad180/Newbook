@@ -11,6 +11,8 @@ const getUser = () => {
 function App() {
   const [user, setUser] = useState(getUser());
 
+
+
   const onLogin = (user) => {
     setUser(user)
     localStorage.setItem('user', JSON.stringify(user))
@@ -23,7 +25,7 @@ function App() {
 
 
 
-  return ( user ? <MainContent onLogout={onLogout}/> : <LoginInterface onLogin={onLogin}/> )
+  return ( user ? <MainContent onLogout={onLogout} user={user}/> : <LoginInterface onLogin={onLogin}/> )
 }
 
 export default App
