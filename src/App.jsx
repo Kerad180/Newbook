@@ -1,16 +1,29 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import { LoginInterface } from './components/LogiInterface.jsx'
+import { MainContent } from './components/MainContent.jsx';
+import './App.css'
+
+const getUser = () => {
+  const user = localStorage.getItem('user')
+  return user !== null ? JSON.parse(user) : null
+}
 
 function App() {
+  const [user, setUser] = useState(getUser());
 
-  return (
-    <>
-      <LoginInterface/>
-    </>
-  )
+  const onLogin = (user) => {
+    setUser(user)
+    localStorage.setItem('user', JSON.stringify(user))
+  }
+
+  const onLogout = () => {
+    setUser(null)
+    localStorage.removeItem('user')
+  }
+
+
+
+  return ( user ? <MainContent onLogout={onLogout}/> : <LoginInterface onLogin={onLogin}/> )
 }
 
 export default App
