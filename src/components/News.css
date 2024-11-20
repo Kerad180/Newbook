@@ -9,3 +9,68 @@
     width: 655px;
     display: block;
 }
+
+#newsShare {
+    -webkit-box-shadow: inset 0px 0px 7px -3px rgba(66, 68, 90, 1);
+            box-shadow: inset 0px 0px 7px -3px rgba(66, 68, 90, 1);
+    border-radius: 8px 8px 15px 15px;
+    margin: 10px;
+    padding: 5px 5px 0px 5px;
+    background-color: #F7FBFC;
+}
+
+#newsShare textarea {
+    resize: none;
+    height: 66px;
+    width: 98%;
+    margin: 5px;
+    background-color: #F7FBFC;
+}
+
+#news h3 {
+    font-size: 20px;
+}
+
+#news ul {
+    margin-bottom: 30px;
+    
+}
+
+#news li {
+    display: block;
+    background-color: white;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(66, 68, 90, 1);
+            box-shadow: 2px 9px 13px -11px rgba(66, 68, 90, 1);
+    border-radius: 8px 8px 8px 15px;
+    margin: 10px;
+    padding: 20px;
+    font-size: 17px;
+    word-wrap: break-word;
+}
+
+#shareButton {
+    background-color: #020709;
+    color: #F7FBFC;
+    font-size: 13px;
+    border-radius: 20px;
+    opacity: 0.9;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+            box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+    height: 18px;
+    width: 100%;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+#shareButton:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#shareButton:active {
+    position: relative;
+    top: 0.7px;
+    -webkit-box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+            box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+}

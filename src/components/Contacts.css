@@ -20,6 +20,8 @@
 
 #line {
     height: 5px;
+    width: 240px;
+    margin: auto;
     margin-bottom: 30px;
     background-color: #7AB9D1;
     border-radius: 100px;
