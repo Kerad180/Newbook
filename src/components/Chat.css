@@ -1,0 +1,128 @@
+#chatWindows {
+    position: fixed;
+    bottom: 32px;
+    right: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+}
+
+.chatWindow {
+    position: relative;
+    margin: 5px;
+    width: 300px;
+    height: 400px;
+    background-color: #FBFDFE;
+    color: #020709;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(66, 68, 90, 1);
+            box-shadow: 2px 9px 13px -11px rgba(66, 68, 90, 1);
+    border-radius: 8px 8px 8px 15px;
+    padding: 20px;
+    font-size: 17px;
+    text-align: left;
+}
+
+
+.chatWindow > div:nth-child(1) div {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.x {
+    opacity: 0.8;
+    -webkit-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+}
+
+.x:hover {
+    opacity: 1;
+    -webkit-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.messages {
+    height: 300px;
+    overflow-y: auto;
+    border-top: 3px solid black;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+.messageFrom, .messageTo {
+    background-color: #7AB9D1;
+    margin-top: 10px;
+    padding: 10px;
+    margin-left: 40px; 
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(66, 68, 90, 1); 
+            box-shadow: 2px 9px 13px -11px rgba(66, 68, 90, 1);
+    border-radius: 8px 8px 8px 15px;
+    font-size: 17px;
+    word-wrap: break-word; 
+}
+
+.messageFrom {
+    background-color: #020709;
+    color: #F7FBFC;
+    margin-right: 40px;
+    margin-left: 0px;
+}
+
+.textChat {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 10fr 1fr;
+    grid-template-columns: 10fr 1fr;
+    -webkit-box-shadow: inset 0px 0px 7px -3px rgba(66, 68, 90, 1);
+            box-shadow: inset 0px 0px 7px -3px rgba(66, 68, 90, 1);
+    border-radius: 5px 30px 30px 5px;
+    padding: 5px 5px 5px 0px;
+}
+
+.textChat textarea {
+    resize: none;
+    height: 44px;
+    margin-left: 10px;
+    background-color: #F7FBFC;
+}
+
+.sendButton {
+    background-color: #020709;
+    color: #F7FBFC;
+    font-size: 13px;
+    border-radius: 20px;
+    opacity: 0.9;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+            box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+    width: 44px;
+    height: 44px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.sendButton:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.sendButton:active {
+    position: relative;
+    top: 0.7px;
+    -webkit-box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+            box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+}

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { LoginInterface } from './components/LogiInterface.jsx'
+import { LoginInterface } from './components/LoginInterface.jsx'
 import { MainContent } from './components/MainContent.jsx';
 import './App.css'
 
@@ -10,8 +10,6 @@ const getUser = () => {
 
 function App() {
   const [user, setUser] = useState(getUser());
-
-
 
   const onLogin = (user) => {
     setUser(user)

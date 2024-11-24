@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Contacts } from './Contacts'
 import { News } from './News' 
+import { users } from './users'
+import { Chat } from './Chat';
+import { ChatWindows } from './ChatWindows';
 import './MainContent.css'
 
 const Top = ({onLogout}) => {
@@ -13,10 +16,11 @@ const Top = ({onLogout}) => {
     )
 }
 
-const Main = ({user}) => {
+const Main = (props) => {
+    const {user, addToChatWindows} = props;
     return(
         <section id='main'>
-            <Contacts user={user}/>
+            <Contacts user={user} addToChatWindows={addToChatWindows}/>
             <News user={user}/>
             <Cube/>
         </section>
@@ -55,11 +59,34 @@ const Cube = () => {
 export const MainContent = (props) => {
     const { onLogout, user } = props; 
 
+    const [ chatWindows, setChatWindows ] = useState([])
+    const [messages, setMessages] = useState([
+        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
+        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
+        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
+        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
+        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
+        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
+        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
+        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
+        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
+        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
+        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
+        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
+        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
+        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
+    ])
+
+    const addToChatWindows = (contact) => {
+        setChatWindows([...chatWindows, contact])
+    }
+
     return(
         <section id='container'>
             <Top onLogout={onLogout}/>
-            <Main user={user}/>
+            <Main user={user} addToChatWindows={addToChatWindows}/>
             <Signature/>
+            <ChatWindows user={user} chatWindows={chatWindows} messages={messages}/>
         </section>
     )
 }

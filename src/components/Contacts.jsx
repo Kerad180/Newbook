@@ -1,10 +1,13 @@
 import { users } from './users';
+import { Chat } from './Chat';
+import { useEffect, useState } from 'react';
+import { Contact } from './Contact';
 import './Contacts.css'
-import { useState } from 'react';
 
 
 
-export const Contacts = ({user}) => {
+
+export const Contacts = ({user, addToChatWindows}) => {
     const setContacts = () => {
         let tempContacts = []
             users.forEach((contact) => {
@@ -17,13 +20,15 @@ export const Contacts = ({user}) => {
     }
     
     const contacts = setContacts();
+
+
     
     return(
         <aside id='contacts'>
             <h2>Contacts</h2>
             <div id='line'></div>
             <ul>
-                {contacts.map((contact) => (<li key={contact}>{contact}</li>))}
+                {contacts.map((contact) => (<Contact key={user.id} contact={contact} addToChatWindows={addToChatWindows}/>))}
             </ul>
         </aside>
     )

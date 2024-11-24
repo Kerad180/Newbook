@@ -17,7 +17,7 @@ export const LoginInterface = (props) => {
     const onClick = () => {
         users.forEach((user) => {
             if(formData.login === user.login && formData.password === user.password) {
-                onLogin({name: formData.login});
+                onLogin({id: user.id, name: user.login});
             }
         })
     }
