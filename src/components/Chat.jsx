@@ -21,6 +21,9 @@ export const Chat = (props) => {
 
     const contactId = setUserTo();
 
+    const scrollToBottom = (e) => {
+        console.log(e)
+    }
 
 
     return(
@@ -32,13 +35,13 @@ export const Chat = (props) => {
                 </div>
             </div>
             <form className='chatForm'>
-                <div className='messages'>
+                <div className='messages' id={`messages${contact}`}>
                     {messages.map(
                         (message) => 
                             {
                                 if(contactId === message.idUserFrom || contactId === message.idUserTo) { 
                                     if(user.id === message.idUserFrom) {
-                                        return(<li className="messageFrom">{message.message}</li>)
+                                        return(<li className="messageFrom" >{message.message}</li>)
                                     } else if(user.id === message.idUserTo) {
                                         return(<li className="messageTo">{message.message}</li>)
                                     }

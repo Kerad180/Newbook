@@ -17,10 +17,10 @@ const Top = ({onLogout}) => {
 }
 
 const Main = (props) => {
-    const {user, addToChatWindows} = props;
+    const {user, addToChatWindows, removeFromChatWindows} = props;
     return(
         <section id='main'>
-            <Contacts user={user} addToChatWindows={addToChatWindows}/>
+            <Contacts user={user} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows}/>
             <News user={user}/>
             <Cube/>
         </section>
@@ -60,6 +60,7 @@ export const MainContent = (props) => {
     const { onLogout, user } = props; 
 
     const [ chatWindows, setChatWindows ] = useState([])
+
     const [messages, setMessages] = useState([
         {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
         {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
@@ -81,10 +82,22 @@ export const MainContent = (props) => {
         setChatWindows([...chatWindows, contact])
     }
 
+    const removeFromChatWindows = (contact) => {
+        let idToRemove;
+        chatWindows.forEach((window) => {
+            if(contact === window) {
+                idToRemove = chatWindows.indexOf(window);
+            }
+        })
+
+        
+
+    }
+
     return(
         <section id='container'>
             <Top onLogout={onLogout}/>
-            <Main user={user} addToChatWindows={addToChatWindows}/>
+            <Main user={user} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows}/>
             <Signature/>
             <ChatWindows user={user} chatWindows={chatWindows} messages={messages}/>
         </section>
