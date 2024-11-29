@@ -30,11 +30,11 @@ export const LoginInterface = (props) => {
                 <form id='logForm'>
                     <div className="windows">
                         <div className="loginAndPassword">Login</div> 
-                        <input data-window type="text" name="login" value={formData.login} onChange={onChangeLogin}/>
+                        <input data-window type="text" name="login" value={formData.login} placeholder='Mufasa/Simba/Kiara' onChange={onChangeLogin}/>
                     </div>
                     <div className="windows">
                         <div className="loginAndPassword">Password</div> 
-                        <input data-window type="password" name="password" value={formData.password} onChange={onChangePassword}/>
+                        <input data-window type="password" name="password" value={formData.password} placeholder='Mufasa/Simba/Kiara' onChange={onChangePassword}/>
                     </div>
                     <div className="windows">
                         <input id="logButton" type="button" value="Log in" onClick={onClick}/>
