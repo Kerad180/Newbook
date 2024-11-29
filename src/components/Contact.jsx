@@ -8,24 +8,29 @@ export const Contact = (props) => {
     const [isChatCreated, setIsChatCreated] = useState(false)
 
 
-    const addChat = (e) => {
+    const addChat = () => {
+        addToChatWindows(contact);
+        setIsChatCreated(true)
+        setTimeout(() => {
+            document.getElementById(`messages${contact}`).scrollTop=1e6;
+        },1) 
+    }
 
-    
-        if (!isChatCreated) {
-            addToChatWindows(contact);
-            setIsChatCreated(true)
-            setTimeout(() => {
-                document.getElementById(`messages${contact}`).scrollTop=1e6;
-            },1)    
-        } else {
-            setIsChatCreated(false);
-            removeFromChatWindows(contact);
-        }
+    const removeChat = () => {
+        setIsChatCreated(false);
+        removeFromChatWindows(contact);
     }
 
 
+    useEffect(() => {
+        if(isChatCreated){
+            document.getElementById(`x${contact}`).addEventListener('click', () => removeChat())
+        }  
+    })
+
+
     return(
-        <li  contact={contact} onClick={(e) => addChat(e)}>{contact}</li>
+        <li contact={contact} onClick={() => isChatCreated ? removeChat() : addChat() }>{contact}</li>
     )
 }
 

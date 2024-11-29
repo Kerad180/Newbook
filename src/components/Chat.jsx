@@ -3,7 +3,7 @@ import { users } from "./users";
 import './Chat.css'
 
 export const Chat = (props) => {
-    const {user, contact, messages} = props;
+    const {user, contact, messages, removeFromChatWindows} = props;
 
 
     const setUserTo = () => {
@@ -21,17 +21,17 @@ export const Chat = (props) => {
 
     const contactId = setUserTo();
 
-    const scrollToBottom = (e) => {
-        console.log(e)
-    }
+    // const removeChat = () => {
+    //     removeFromChatWindows(contact);
+    // }
 
 
     return(
-        <div className='chatWindow'>
+        <div className='chatWindow'  >
             <div>
                 <h3>{contact}</h3>
                 <div>
-                    <img className='x' src='pictures/close-line.png' alt='x'/>
+                    <img className='x'id={`x${contact}`} src='src/pictures/close-line.png' alt='x'/>
                 </div>
             </div>
             <form className='chatForm'>
@@ -41,9 +41,9 @@ export const Chat = (props) => {
                             {
                                 if(contactId === message.idUserFrom || contactId === message.idUserTo) { 
                                     if(user.id === message.idUserFrom) {
-                                        return(<li className="messageFrom" >{message.message}</li>)
+                                        return(<li key={user.id} className="messageFrom" >{message.message}</li>)
                                     } else if(user.id === message.idUserTo) {
-                                        return(<li className="messageTo">{message.message}</li>)
+                                        return(<li key={user.id} className="messageTo">{message.message}</li>)
                                     }
                                 }
                             }
