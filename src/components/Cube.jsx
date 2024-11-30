@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import './Cube.css'
 
 export const Cube = ({isVisibleCube}) => {

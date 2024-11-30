@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Chat } from './Chat';
 
 
 export const Contact = (props) => {

@@ -1,8 +1,6 @@
 import { useState } from 'react'
 import { Top } from './Top'
 import { Center } from './Center'
-import { users } from './users'
-import { Chat } from './Chat';
 import { ChatWindows } from './ChatWindows';
 import { Signature } from './Signature';
 import './MainContent.css'

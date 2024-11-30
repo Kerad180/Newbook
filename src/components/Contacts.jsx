@@ -1,6 +1,5 @@
 import { users } from './users';
-import { Chat } from './Chat';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Contact } from './Contact';
 import './Contacts.css'
 
