@@ -3,7 +3,7 @@ import { Chat } from './Chat';
 
 
 export const Contact = (props) => {
-    const {contact, addToChatWindows, removeFromChatWindows} = props;
+    const {contact, addToChatWindows, removeFromChatWindows, isMobile} = props;
 
     const [isChatCreated, setIsChatCreated] = useState(false)
 
@@ -30,7 +30,7 @@ export const Contact = (props) => {
 
 
     return(
-        <li contact={contact} onClick={() => isChatCreated ? removeChat() : addChat() }>{contact}</li>
+        <li contact={contact} onClick={() => isChatCreated ? removeChat() : addChat()} style={{width: isMobile ? '110px' : '220px'}}>{contact}</li>
     )
 }
 

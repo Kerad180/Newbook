@@ -1,6 +1,13 @@
-export const Cube = () => {
+import { useEffect, useState } from 'react'
+import './Cube.css'
+
+export const Cube = ({isVisibleCube}) => {
+
+
+
+
     return(
-    <aside id="something">   
+    <aside id="cubeContainer" style={{display: isVisibleCube ? 'flex' : 'none'}}>   
         <div className="cubeLine"></div>
         <div id="placeForCube">
             <div id="stageForCube">

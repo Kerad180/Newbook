@@ -1,3 +1,5 @@
+import './Signature.css'
+
 export const Signature = () => {
     return(
     <footer id='signature'>

@@ -12,6 +12,7 @@
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
+    z-index: 2000;
 }
 
 .chatWindow {
@@ -28,7 +29,6 @@
     font-size: 17px;
     text-align: left;
 }
-
 
 .chatWindow > div:nth-child(1) div {
     position: absolute;

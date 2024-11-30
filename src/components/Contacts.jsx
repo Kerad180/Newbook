@@ -1,6 +1,6 @@
 import { users } from './users';
 import { Chat } from './Chat';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Contact } from './Contact';
 import './Contacts.css'
 
@@ -8,7 +8,8 @@ import './Contacts.css'
 
 
 export const Contacts = (props) => {
-    const {user, addToChatWindows, removeFromChatWindows} = props;
+    const {user, addToChatWindows, removeFromChatWindows, isMobile} = props;
+
     const setContacts = () => {
         let tempContacts = []
             users.forEach((contact) => {
@@ -21,15 +22,13 @@ export const Contacts = (props) => {
     }
     
     const contacts = setContacts();
-
-
     
     return(
         <aside id='contacts'>
-            <h2>Contacts</h2>
-            <div id='line'></div>
+            <h2 style={{fontSize: isMobile ? '25px' : '50px'}}>Contacts</h2>
+            <div id='line' style={{width: isMobile ? '100px' : '240px'}}></div>
             <ul>
-                {contacts.map((contact) => (<Contact key={user.id} contact={contact} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows}/>))}
+                {contacts.map((contact) => (<Contact key={user.id} contact={contact} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows} isMobile={isMobile}/>))}
             </ul>
         </aside>
     )

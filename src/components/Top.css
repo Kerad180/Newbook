@@ -1,0 +1,46 @@
+#top {
+    background-color: #7AB9D1;
+    border-radius: 0px 0px 15px 15px;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 1);
+            box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 1);
+    padding: 10px;
+    position: sticky;
+    top: 0px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 13fr 1fr;
+    grid-template-columns: 13fr 1fr;
+    z-index: 1000;
+}
+
+#top div h2 {
+    color: #020709;
+    font-size: 40px;
+}
+
+#returnButton {
+    background-color: #020709;
+    color: #F7FBFC;
+    padding: 20px; 
+    font-size: 15px;
+    border-radius: 20px;
+    opacity: 0.9;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+            box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+    width: 100px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+#returnButton:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#returnButton:active {
+    position: relative;
+    top: 0.7px;
+    -webkit-box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+            box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+}

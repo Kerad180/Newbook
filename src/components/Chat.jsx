@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { users } from "./users";
-import './Chat.css'
 
 export const Chat = (props) => {
     const {user, contact, messages, removeFromChatWindows} = props;
@@ -20,11 +19,6 @@ export const Chat = (props) => {
     }
 
     const contactId = setUserTo();
-
-    // const removeChat = () => {
-    //     removeFromChatWindows(contact);
-    // }
-
 
     return(
         <div className='chatWindow'  >

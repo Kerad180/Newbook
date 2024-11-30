@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Chat } from "./Chat";
+import './ChatWindows.css'
 
 export const ChatWindows = (props) => {
     const {user, chatWindows, messages, removeFromChatWindows} = props;

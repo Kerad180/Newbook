@@ -1,0 +1,14 @@
+#signature {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #020709;
+    color: #F7FBFC;
+    padding: 3px;
+    text-align: right;
+}
+
+#signature span {
+    font-size: 12px;
+    margin-right: 20px;
+}
