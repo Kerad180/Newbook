@@ -25,7 +25,7 @@ export const News = ({user}) => {
                 </div>         
             </form>
             <ul>
-                {news.map((n) => (<li><article><h3>{n.login} shared:</h3><div>{n.text}</div></article></li>))}
+                {news.map((n) => (<li key={news.indexOf(n)}><article><h3>{n.login} shared:</h3><div>{n.text}</div></article></li>))}
             </ul>  
         </section>
     )
