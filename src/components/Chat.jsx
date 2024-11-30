@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { users } from "./users";
 
 export const Chat = (props) => {
-    const {user, contact, messages, removeFromChatWindows} = props;
+    const {user, contact, messages, removeFromChatWindows, addToMessages} = props;
 
 
     const setUserTo = () => {
@@ -11,8 +10,6 @@ export const Chat = (props) => {
             if(tempUser.login === contact) {
                 id = tempUser.id;
             }
-        
-
         }
         )
         return id;
@@ -45,7 +42,7 @@ export const Chat = (props) => {
                 </div>
                 <div className='textChat'>
                     <div><textarea></textarea></div>
-                        <div><input className='sendButton' type='submit' value='Send'/></div>
+                    <div><input className='sendButton' type='button' value='Send' onClick={(e) => addToMessages(e, contactId, contact)}/></div>
                 </div>
             </form>
         </div>

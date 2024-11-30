@@ -9,7 +9,8 @@ export const News = ({user}) => {
     const newsShare = (e) => {
         const text = e.target.parentNode.parentNode.firstChild.firstChild.value;
         e.target.parentNode.parentNode.firstChild.firstChild.value = "";
-        const message = {login: user.name, text: text}
+        let message = {login: user.name, text: text}
+        setNews([message, ...news])
     }
 
 
@@ -21,7 +22,7 @@ export const News = ({user}) => {
                     <textarea id="newsText" placeholder="What do you think?" name="reg-pw"></textarea>
                 </div>
                 <div>
-                    <input id='shareButton' type='button' value="Share" onClick={newsShare}/>
+                    <input id='shareButton' type='button' value="Share" onClick={(e) => newsShare(e)}/>
                 </div>         
             </form>
             <ul>

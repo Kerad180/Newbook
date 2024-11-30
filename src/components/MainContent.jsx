@@ -27,6 +27,16 @@ export const MainContent = (props) => {
         {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
     ])
 
+    const addToMessages = (e, contactId, contact) => {
+        const text = e.target.parentNode.parentNode.childNodes[0].childNodes[0].value
+        e.target.parentNode.parentNode.childNodes[0].childNodes[0].value = "";
+        let message = {idUserFrom: user.id, idUserTo: contactId, message: text}
+        setMessages([...messages, message])
+        setTimeout(() => {
+            document.getElementById(`messages${contact}`).scrollTop=1e6;
+        },1) 
+    }
+
     const addToChatWindows = (contact) => {
         setChatWindows([...chatWindows, contact])
     }
@@ -48,7 +58,7 @@ export const MainContent = (props) => {
             <Top onLogout={onLogout}/>
             <Center user={user} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows}/>
             <Signature/>
-            <ChatWindows user={user} chatWindows={chatWindows} messages={messages} removeFromChatWindows={removeFromChatWindows}/>
+            <ChatWindows user={user} chatWindows={chatWindows} messages={messages} removeFromChatWindows={removeFromChatWindows} addToMessages={addToMessages}/>
         </section>
     )
 }
