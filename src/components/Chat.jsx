@@ -1,9 +1,10 @@
 import { users } from "./users";
 
 export const Chat = (props) => {
-    const {user, contact, messages, removeFromChatWindows, addToMessages} = props;
+    const {user, contact, messages, addToMessages, removeFromChatWindows} = props;
 
 
+    
     const setUserTo = () => {
         let id;
         users.forEach((tempUser) => { 
@@ -17,12 +18,13 @@ export const Chat = (props) => {
 
     const contactId = setUserTo();
 
+
     return(
-        <div className='chatWindow'  >
+        <div className='chatWindow'>
             <div>
                 <h3>{contact}</h3>
                 <div>
-                    <img className='x'id={`x${contact}`} src='src/pictures/close-line.png' alt='x'/>
+                    <img className='x'id={`x${contact}`} src='src/pictures/close-line.png' alt='x' onClick={() => removeFromChatWindows(contact)}/>
                 </div>
             </div>
             <form className='chatForm'>

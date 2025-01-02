@@ -16,20 +16,20 @@ export const Contact = (props) => {
     }
 
     const removeChat = () => {
-        setIsChatCreated(false);
+        setIsChatCreated(false); 
         removeFromChatWindows(contact);
     }
 
-
-    useEffect(() => {
-        if(isChatCreated){
-            document.getElementById(`x${contact}`).addEventListener('click', () => removeChat())
-        }  
-    })
-
+    const setChat = () => {
+        if (document.getElementById(`x${contact}`) && isChatCreated) {
+            removeChat()
+        } else {
+            addChat()
+        }
+    }
 
     return(
-        <li contact={contact} onClick={() => isChatCreated ? removeChat() : addChat()} style={{width: isMobile ? '110px' : '220px'}}>{contact}</li>
+        <li contact={contact} onClick={() => setChat()} style={{width: isMobile ? '110px' : '220px'}}>{contact}</li>
     )
 }
 

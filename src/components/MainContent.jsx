@@ -13,18 +13,6 @@ export const MainContent = (props) => {
     const [messages, setMessages] = useState([
         {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
         {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
-        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
-        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
-        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
-        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
-        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
-        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
-        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
-        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
-        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
-        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
-        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
-        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
     ])
 
     const addToMessages = (e, contactId, contact) => {
