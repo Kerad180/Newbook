@@ -1,22 +1,27 @@
+import { useEffect, useState } from "react";
 import { users } from "./users";
 
 export const Chat = (props) => {
     const {user, contact, messages, addToMessages, removeFromChatWindows} = props;
 
+    const [contactId, setContactId] = useState()
+
+    useEffect(() => {
+        const getUserTo = () => {
+            let id;
+            users.forEach((tempUser) => { 
+                if(tempUser.login === contact) {
+                    id = tempUser.id;
+                }
+            }
+            )
+            return id;
+        }
+        setContactId(getUserTo())
+    }, [])
+
 
     
-    const setUserTo = () => {
-        let id;
-        users.forEach((tempUser) => { 
-            if(tempUser.login === contact) {
-                id = tempUser.id;
-            }
-        }
-        )
-        return id;
-    }
-
-    const contactId = setUserTo();
 
 
     return(
@@ -28,12 +33,15 @@ export const Chat = (props) => {
                 </div>
             </div>
             <form className='chatForm'>
-                <div className='messages' id={`messages${contact}`}>
+                <div className='messages' id={`messages${contact}`} >
                     {messages.map(
                         (message) => 
                             {
+                                console.log(contactId) 
                                 if(contactId === message.idUserFrom || contactId === message.idUserTo) { 
-                                    if(user.id === message.idUserFrom) {
+                                    if(user.id === message.idUserFrom) {  
+                                        console.log(contactId)  
+                                        console.log(contact)                               
                                         return(<li key={user.id} className="messageFrom" >{message.message}</li>)
                                     } else if(user.id === message.idUserTo) {
                                         return(<li key={user.id} className="messageTo">{message.message}</li>)

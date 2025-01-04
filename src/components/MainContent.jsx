@@ -31,8 +31,9 @@ export const MainContent = (props) => {
 
     const removeFromChatWindows = (contact) => {
         let idToRemove;
-
+        
         chatWindows.forEach((window) => {
+  
             if(contact === window) {
                 idToRemove = chatWindows.indexOf(window);
             }

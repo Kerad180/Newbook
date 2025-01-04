@@ -12,6 +12,7 @@ function App() {
   const [user, setUser] = useState(getUser());
 
   const onLogin = (user) => {
+    console.log(user)
     setUser(user)
     localStorage.setItem('user', JSON.stringify(user))
   }
