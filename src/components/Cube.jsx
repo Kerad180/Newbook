@@ -2,9 +2,6 @@ import './Cube.css'
 
 export const Cube = ({isVisibleCube}) => {
 
-
-
-
     return(
     <aside id="cubeContainer" style={{display: isVisibleCube ? 'flex' : 'none'}}>   
         <div className="cubeLine"></div>

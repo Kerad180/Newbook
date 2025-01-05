@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { users } from "./users";
 
 export const Chat = (props) => {
     const {user, contact, messages, addToMessages, removeFromChatWindows} = props;
