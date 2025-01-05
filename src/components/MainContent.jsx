@@ -34,7 +34,7 @@ export const MainContent = (props) => {
         
         chatWindows.forEach((window) => {
   
-            if(contact === window) {
+            if(contact.login === window.login) {
                 idToRemove = chatWindows.indexOf(window);
             }
         })

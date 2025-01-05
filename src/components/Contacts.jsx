@@ -13,7 +13,7 @@ export const Contacts = (props) => {
         let tempContacts = []
             users.forEach((contact) => {
                 if(contact.login !== user.name) {
-                    tempContacts.push(contact.login)
+                    tempContacts.push({id: contact.id,login: contact.login})
                 }
             })
     
@@ -27,7 +27,7 @@ export const Contacts = (props) => {
             <h2 style={{fontSize: isMobile ? '25px' : '50px'}}>Contacts</h2>
             <div id='line' style={{width: isMobile ? '100px' : '240px'}}></div>
             <ul>
-                {contacts.map((contact) => (<Contact key={contact} contact={contact} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows} isMobile={isMobile}/>))}
+                {contacts.map((contact) => (<Contact key={contact.id} contact={contact} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows} isMobile={isMobile}/>))}
             </ul>
         </aside>
     )

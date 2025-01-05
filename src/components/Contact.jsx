@@ -11,7 +11,7 @@ export const Contact = (props) => {
         addToChatWindows(contact);
         setIsChatCreated(true)
         setTimeout(() => {
-            document.getElementById(`messages${contact}`).scrollTop=1e6;
+            document.getElementById(`messages${contact.login}`).scrollTop=1e6;
         },1) 
     }
 
@@ -21,15 +21,17 @@ export const Contact = (props) => {
     }
 
     const setChat = () => {
-        if (document.getElementById(`x${contact}`) && isChatCreated) {
+        if (isChatCreated && document.getElementById(`x${contact.login}`)) {
+            console.log(1)
             removeChat()
         } else {
+            console.log(2)
             addChat()
         }
     }
 
     return(
-        <li contact={contact} onClick={() => setChat()} style={{width: isMobile ? '110px' : '220px'}}>{contact}</li>
+        <li contact={contact.login} onClick={() => setChat()} style={{width: isMobile ? '110px' : '220px'}}>{contact.login}</li>
     )
 }
 
