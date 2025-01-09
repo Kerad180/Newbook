@@ -7,7 +7,7 @@ import './Contacts.css'
 
 
 export const Contacts = (props) => {
-    const {user, addToChatWindows, removeFromChatWindows, isMobile} = props;
+    const {user, addToChatWindows, removeFromChatWindows} = props;
 
     const setContacts = () => {
         let tempContacts = []
@@ -24,10 +24,10 @@ export const Contacts = (props) => {
     
     return(
         <aside id='contacts'>
-            <h2 style={{fontSize: isMobile ? '25px' : '50px'}}>Contacts</h2>
-            <div id='line' style={{width: isMobile ? '100px' : '240px'}}></div>
+            <h2>Contacts</h2>
+            <div id='line'></div>
             <ul>
-                {contacts.map((contact) => (<Contact key={contact.id} contact={contact} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows} isMobile={isMobile}/>))}
+                {contacts.map((contact) => (<Contact key={contact.id} contact={contact} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows}/>))}
             </ul>
         </aside>
     )

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 
 export const Contact = (props) => {
-    const {contact, addToChatWindows, removeFromChatWindows, isMobile} = props;
+    const {contact, addToChatWindows, removeFromChatWindows} = props;
 
     const [isChatCreated, setIsChatCreated] = useState(false)
 
@@ -22,16 +22,14 @@ export const Contact = (props) => {
 
     const setChat = () => {
         if (isChatCreated && document.getElementById(`x${contact.login}`)) {
-            console.log(1)
             removeChat()
         } else {
-            console.log(2)
             addChat()
         }
     }
 
     return(
-        <li contact={contact.login} onClick={() => setChat()} style={{width: isMobile ? '110px' : '220px'}}>{contact.login}</li>
+        <li contact={contact.login} onClick={() => setChat()}>{contact.login}</li>
     )
 }
 

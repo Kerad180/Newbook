@@ -1,0 +1,26 @@
+#contactsButton {
+    background-color: #020709;
+    color: #F7FBFC;
+    padding: 20px; 
+    font-size: 15px;
+    margin-right: 10px;
+    border-radius: 100px;
+    opacity: 0.9;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+            box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+    width: 50px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+#contactsButton:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#contactsButton:active {
+    position: relative;
+    top: 0.7px;
+    -webkit-box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+            box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+}
