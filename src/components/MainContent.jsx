@@ -10,6 +10,11 @@ export const MainContent = (props) => {
 
     const [chatWindows, setChatWindows] = useState([])
 
+    const [messages, setMessages] = useState([
+        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
+        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
+    ])
+
     const [isMobile, setIsMobile] = useState(false)
     const [isVisibleCube, setIsVisibleCube] = useState(true)
 
@@ -52,15 +57,12 @@ export const MainContent = (props) => {
         }
     },[isMobile])
 
-    const [messages, setMessages] = useState([
-        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
-        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
-    ])
 
-    const addToMessages = (e, contactId, contact) => {
+
+    const addToMessages = (e, contact) => {
         const text = e.target.parentNode.parentNode.childNodes[0].childNodes[0].value
         e.target.parentNode.parentNode.childNodes[0].childNodes[0].value = "";
-        let message = {idUserFrom: user.id, idUserTo: contactId, message: text}
+        let message = {idUserFrom: user.id, idUserTo: contact.id, message: text}
         setMessages([...messages, message])
         setTimeout(() => {
             document.getElementById(`messages${contact.login}`).scrollTop=1e6;
