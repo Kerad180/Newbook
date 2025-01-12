@@ -60,6 +60,7 @@ export const MainContent = (props) => {
 
 
     const addToMessages = (e, contact) => {
+        e.preventDefault();
         const text = e.target.parentNode.parentNode.childNodes[0].childNodes[0].value
         e.target.parentNode.parentNode.childNodes[0].childNodes[0].value = "";
         let message = {idUserFrom: user.id, idUserTo: contact.id, message: text}

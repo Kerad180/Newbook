@@ -3,6 +3,15 @@ import { useEffect, useState } from "react";
 export const Chat = (props) => {
     const {user, contact, messages, addToMessages, removeFromChatWindows} = props;
 
+    const keyListener = (e, contact) => {
+        if (e.keyCode === 13 && e.shiftKey) {
+            e.preventDefault()
+            e.target.value = e.target.value + '\n'
+            e.target.scrollTop=1e6;
+        } else if (e.keyCode === 13) {
+            addToMessages(e, contact)
+        }
+    }
     
     return(
         <div className='chatWindow'>
@@ -27,8 +36,9 @@ export const Chat = (props) => {
                             }
                     )}
                 </div>
-                <div className='textChat'>
-                    <div><textarea></textarea></div>
+
+                <div className='textChat' id={`textChat${contact.login}`}>
+                    <div><textarea onKeyDown={(e) => keyListener(e, contact)}></textarea></div>
                     <div><input className='sendButton' type='button' value='Send' onClick={(e) => addToMessages(e, contact)}/></div>
                 </div>
             </form>
