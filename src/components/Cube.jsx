@@ -8,7 +8,7 @@ export const Cube = ({isVisibleCube}) => {
         <div id="placeForCube">
             <div id="stageForCube">
                 <div id="cube">
-                    <div className="wall front">MB</div>
+                    <div className="wall front">NB</div>
                     <div className="wall back"></div>
                     <div className="wall left"></div>
                     <div className="wall right"></div>
