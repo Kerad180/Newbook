@@ -5,14 +5,14 @@ import { ChatWindows } from './ChatWindows';
 import { Signature } from './Signature';
 import './MainContent.css'
 
-export const MainContent = (props) => {
+export const MainContent = (props) => {             
     const { onLogout, user } = props; 
 
     const [chatWindows, setChatWindows] = useState([])
 
     const [messages, setMessages] = useState([
-        {idUserFrom: 1, idUserTo: 2, message: 'Cześć synu, co u ciebie słychać?'},
-        {idUserFrom: 2, idUserTo: 1, message: 'Wszystko dobrze'},
+        {idUserFrom: 1, idUserTo: 2, message: <div><p>Cześć synu, co u ciebie słychać?</p></div>},
+        {idUserFrom: 2, idUserTo: 1, message: <div><p>Wszystko dobrze</p></div>},
     ])
 
     const [isMobile, setIsMobile] = useState(false)
@@ -61,9 +61,14 @@ export const MainContent = (props) => {
 
     const addToMessages = (e, contact) => {
         e.preventDefault();
+
         const text = e.target.parentNode.parentNode.childNodes[0].childNodes[0].value
+                        .split('\n').map((item, i) => <p key={i}>{item}<br/></p>)
+
         e.target.parentNode.parentNode.childNodes[0].childNodes[0].value = "";
-        let message = {idUserFrom: user.id, idUserTo: contact.id, message: text}
+
+        let message = {idUserFrom: user.id, idUserTo: contact.id, message: <div>{text}</div>}
+
         setMessages([...messages, message])
         setTimeout(() => {
             document.getElementById(`messages${contact.login}`).scrollTop=1e6;

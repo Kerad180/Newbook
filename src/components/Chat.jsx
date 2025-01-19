@@ -9,6 +9,7 @@ export const Chat = (props) => {
             e.target.value = e.target.value + '\n'
             e.target.scrollTop=1e6;
         } else if (e.keyCode === 13) {
+
             addToMessages(e, contact)
         }
     }
@@ -24,13 +25,13 @@ export const Chat = (props) => {
             <form className='chatForm'>
                 <div className='messages' id={`messages${contact.login}`} >
                     {messages.map(
-                        (message) => 
+                        (message, id) => 
                             {
                                 if(contact.id=== message.idUserFrom || contact.id === message.idUserTo) { 
                                     if(user.id === message.idUserFrom) {                             
-                                        return(<li key={messages.indexOf(message)} className="sendMessage" >{message.message}</li>)
+                                        return(<li key={id} className="sendMessage">{message.message}</li>)
                                     } else if(user.id === message.idUserTo) {
-                                        return(<li key={messages.indexOf(message)} className="recMessage">{message.message}</li>)
+                                        return(<li key={id} className="recMessage">{message.message}</li>)
                                     }
                                 }
                             }

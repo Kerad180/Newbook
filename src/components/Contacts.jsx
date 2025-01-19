@@ -27,7 +27,7 @@ export const Contacts = (props) => {
             <h2>Contacts</h2>
             <div id='line'></div>
             <ul>
-                {contacts.map((contact) => (<Contact key={contact.id} contact={contact} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows}/>))}
+                {contacts.map((contact, id) => (<Contact key={id} contact={contact} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows}/>))}
             </ul>
         </aside>
     )

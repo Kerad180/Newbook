@@ -6,7 +6,7 @@ export const ChatWindows = (props) => {
 
     return(
         <ul id='chatWindows'>
-            {chatWindows.map((contact) => (<Chat key={contact.id} user={user} contact={contact} messages={messages} removeFromChatWindows={removeFromChatWindows} addToMessages={addToMessages}/>))}
+            {chatWindows.map((contact, id) => (<Chat key={id} user={user} contact={contact} messages={messages} removeFromChatWindows={removeFromChatWindows} addToMessages={addToMessages}/>))}
         </ul>
     )
 }
