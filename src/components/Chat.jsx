@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const Chat = (props) => {
-    const {user, contact, messages, addToMessages, removeFromChatWindows} = props;
+    const {user, contact, messages, addToMessages, removeFromChatWindows, isMobile} = props;
 
     const keyListener = (e, contact) => {
         if (e.keyCode === 13 && e.shiftKey) {
@@ -15,7 +15,7 @@ export const Chat = (props) => {
     }
     
     return(
-        <div className='chatWindow'>
+        <div className='chatWindow' style={{width: isMobile ? 270 : 300, height: isMobile ? 220 : 400}}>
             <div>
                 <h3>{contact.login}</h3>
                 <div>
@@ -23,7 +23,7 @@ export const Chat = (props) => {
                 </div>
             </div>
             <form className='chatForm'>
-                <div className='messages' id={`messages${contact.login}`} >
+                <div className='messages' id={`messages${contact.login}`} style={{height: isMobile ? 120 : 300}}>
                     {messages.map(
                         (message, id) => 
                             {

@@ -97,7 +97,7 @@ export const MainContent = (props) => {
             <Top onLogout={onLogout} isMobile={isMobile}/>
             <Center user={user} addToChatWindows={addToChatWindows} removeFromChatWindows={removeFromChatWindows} isMobile={isMobile} isVisibleCube={isVisibleCube} />
             <Signature/>
-            <ChatWindows user={user} chatWindows={chatWindows} messages={messages} removeFromChatWindows={removeFromChatWindows} addToMessages={addToMessages}/>
+            <ChatWindows user={user} chatWindows={chatWindows} messages={messages} removeFromChatWindows={removeFromChatWindows} addToMessages={addToMessages} isMobile={isMobile}/>
         </section>
     )
 }
